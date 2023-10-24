@@ -10,11 +10,9 @@ export default async function Home() {
     data: { session },
   } = await supabase.auth.refreshSession();
 
-  const user = session?.user;
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <Header user={user} />
+      <Header />
     </main>
   );
 }

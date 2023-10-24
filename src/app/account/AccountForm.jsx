@@ -1,17 +1,19 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
+
 import { supabase } from "@/app/constants/supabase";
+import useUserInfoStore from "../store/userInfo";
 
 export default function AccountForm({ session }) {
+  const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [fullname, setFullname] = useState(null);
-  const [username, setUsername] = useState(null);
   const [website, setWebsite] = useState(null);
   const [avatar_url, setAvatarUrl] = useState(null);
   const user = session?.user;
 
-  const router = useRouter();
+  const { username, setUsername } = useUserInfoStore();
 
   const getProfile = useCallback(async () => {
     try {
@@ -29,6 +31,7 @@ export default function AccountForm({ session }) {
 
       if (data) {
         setFullname(data.full_name);
+        console.log("왜 안 돼");
         setUsername(data.username);
         setWebsite(data.website);
         setAvatarUrl(data.avatar_url);

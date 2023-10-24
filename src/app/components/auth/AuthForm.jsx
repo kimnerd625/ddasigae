@@ -4,6 +4,8 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { supabase } from "@/app/constants/supabase";
 
+import { getCallbackURL } from "@/app/utils/getUrl";
+
 export default function AuthForm() {
   const customTheme = {
     default: {
@@ -39,6 +41,9 @@ export default function AuthForm() {
     },
   };
 
+  const URL = getCallbackURL();
+  console.log(URL);
+
   return (
     <div className="w-full px-4">
       <Auth
@@ -60,7 +65,7 @@ export default function AuthForm() {
         theme="default"
         showLinks={false}
         providers={[]}
-        redirectTo="http://localhost:3000/auth/callback"
+        redirectTo={URL}
       />
     </div>
   );
