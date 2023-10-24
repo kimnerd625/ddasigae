@@ -60,7 +60,7 @@ export default function AuthForm() {
         theme="default"
         showLinks={false}
         providers={[]}
-        redirectTo="http://localhost:3000/auth/callback"
+        redirectTo="https://ddasigae.vercel.app/auth/callback"
       />
     </div>
   );
