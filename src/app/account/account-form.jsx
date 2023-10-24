@@ -64,55 +64,75 @@ export default function AccountForm({ session }) {
   }
 
   return (
-    <div className="form-widget">
-      <div>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={session?.user.email} disabled />
+    <div className="form-widget min-h-screen bg-beige p-4 rounded-md shadow-md flex justify-center items-center flex-col">
+      <div className="w-full mb-2">
+        <label htmlFor="email" className="block text-black font-bold mb-1">
+          이메일
+        </label>
+        <input
+          id="email"
+          type="text"
+          value={session?.user.email}
+          disabled
+          className="bg-white border border-gray-300 rounded-md px-3 py-2 w-full"
+        />
       </div>
-      <div>
-        <label htmlFor="fullName">Full Name</label>
+      <div className="w-full mb-2">
+        <label htmlFor="fullName" className="block text-black font-bold mb-1">
+          이름
+        </label>
         <input
           id="fullName"
           type="text"
           value={fullname || ""}
           onChange={(e) => setFullname(e.target.value)}
+          className="bg-white border border-gray-300 rounded-md px-3 py-2 w-full"
         />
       </div>
-      <div>
-        <label htmlFor="username">Username</label>
+      <div className="w-full mb-2">
+        <label htmlFor="username" className="block text-black font-bold mb-1">
+          닉네임
+        </label>
         <input
           id="username"
           type="text"
           value={username || ""}
           onChange={(e) => setUsername(e.target.value)}
+          className="bg-white border border-gray-300 rounded-md px-3 py-2 w-full"
         />
       </div>
-      <div>
-        <label htmlFor="website">Website</label>
+      <div className="w-full mb-4">
+        <label htmlFor="website" className="block text-black font-bold mb-1">
+          웹사이트
+        </label>
         <input
           id="website"
           type="url"
           value={website || ""}
           onChange={(e) => setWebsite(e.target.value)}
+          className="bg-white border border-gray-300 rounded-md px-3 py-2 w-full"
         />
       </div>
 
-      <div>
+      <div className="w-full mb-4">
         <button
-          className="button primary block"
+          className="w-full button primary block bg-main text-white px-4 py-2 rounded-md"
           onClick={() =>
             updateProfile({ fullname, username, website, avatar_url })
           }
           disabled={loading}
         >
-          {loading ? "Loading ..." : "Update"}
+          {loading ? "로딩중..." : "업데이트하기"}
         </button>
       </div>
 
-      <div>
+      <div className="w-full">
         <form action="/auth/signout" method="post">
-          <button className="button block" type="submit">
-            Sign out
+          <button
+            className="w-full button block bg-gray text-black px-4 py-2 rounded-md"
+            type="submit"
+          >
+            로그아웃하기
           </button>
         </form>
       </div>
