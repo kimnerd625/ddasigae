@@ -1,6 +1,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import Header from "./components/header/Header";
+import WeatherCarousel from "./components/weather/WeatherCarousel";
 
 export default async function Home() {
   const cookieStore = cookies();
@@ -13,6 +14,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Header />
+      <WeatherCarousel />
     </main>
   );
 }

@@ -1,18 +1,22 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import AccountForm from "./AccountForm";
+import { NextResponse } from "next/server";
 
-export default async function Account() {
+export async function GET(req) {
   const cookieStore = cookies();
-  const supabase = createServerComponentClient({ cookies: () => cookieStore });
+  const supabase = createRouteHandlerClient({ cookies: () => cookieStore });
+  const { searchParams } = new URL(req.url);
+  const code = searchParams.get("code");
 
-  const {
-    data: { session },
-  } = await supabase.auth.refreshSession();
+  console.log("Code:", code); // 코드가 정상적으로 추출되는지 확인
 
-  return (
-    <div className="w-full min-h-screen justify-center items-center flex px-4">
-      <AccountForm session={session} />
-    </div>
-  );
+  if (code) {
+    await supabase.auth.exchangeCodeForSession(code);
+    console.log("Code exchanged for session"); // 코드가 세션으로 정상적으로 교환되는지 확인
+  }
+
+  const redirectURL = new URL("/account", req.url);
+  console.log("Redirect URL:", redirectURL); // 리다이렉션할 URL 확인
+
+  return NextResponse.redirect(redirectURL);
 }
