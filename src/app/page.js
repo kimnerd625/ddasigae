@@ -1,20 +1,16 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-import Header from "./components/header/Header";
-import WeatherCarousel from "./components/weather/WeatherCarousel";
+import Image from "next/image";
 
-export default async function Home() {
-  const cookieStore = cookies();
-  const supabase = createServerComponentClient({ cookies: () => cookieStore });
+import logoImage from "/public/images/logoImage.jpg";
 
-  const {
-    data: { session },
-  } = await supabase.auth.refreshSession();
+import AuthForm from "./auth-form";
 
+export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <Header />
-      <WeatherCarousel />
-    </main>
+    <div className="w-full min-h-screen flex flex-col justify-center items-center gap-4">
+      <Image src={logoImage} width={300} alt="로고 이미지" />
+      <div className="w-full">
+        <AuthForm />
+      </div>
+    </div>
   );
 }

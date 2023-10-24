@@ -1,19 +1,15 @@
 "use client";
-import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-
-import { supabase } from "@/app/constants/supabase";
-import useUserInfoStore from "../store/userInfo";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function AccountForm({ session }) {
-  const router = useRouter();
+  const supabase = createClientComponentClient();
   const [loading, setLoading] = useState(true);
   const [fullname, setFullname] = useState(null);
+  const [username, setUsername] = useState(null);
   const [website, setWebsite] = useState(null);
   const [avatar_url, setAvatarUrl] = useState(null);
   const user = session?.user;
-
-  const { username, setUsername } = useUserInfoStore();
 
   const getProfile = useCallback(async () => {
     try {
@@ -31,7 +27,6 @@ export default function AccountForm({ session }) {
 
       if (data) {
         setFullname(data.full_name);
-        console.log("왜 안 돼");
         setUsername(data.username);
         setWebsite(data.website);
         setAvatarUrl(data.avatar_url);
@@ -60,8 +55,7 @@ export default function AccountForm({ session }) {
         updated_at: new Date().toISOString(),
       });
       if (error) throw error;
-      alert("성공적으로 정보가 수정되었습니다!");
-      router.push("/");
+      alert("Profile updated!");
     } catch (error) {
       alert("Error updating the data!");
     } finally {
@@ -70,62 +64,42 @@ export default function AccountForm({ session }) {
   }
 
   return (
-    <div className="form-widget p-4 w-full mx-auto bg-beige rounded shadow-lg">
-      <div className="mb-4">
-        <label htmlFor="email" className="block text-black font-bold mb-2">
-          Email
-        </label>
-        <input
-          id="email"
-          type="text"
-          value={session?.user.email}
-          disabled
-          className="w-full bg-white text-black border border-black py-2 px-4 rounded focus:outline-none focus:bg-white"
-        />
+    <div className="form-widget">
+      <div>
+        <label htmlFor="email">Email</label>
+        <input id="email" type="text" value={session?.user.email} disabled />
       </div>
-
-      <div className="mb-4">
-        <label htmlFor="fullName" className="block text-black font-bold mb-2">
-          Full Name
-        </label>
+      <div>
+        <label htmlFor="fullName">Full Name</label>
         <input
           id="fullName"
           type="text"
           value={fullname || ""}
           onChange={(e) => setFullname(e.target.value)}
-          className="w-full bg-white text-black border border-black py-2 px-4 rounded focus:outline-none focus:bg-white"
         />
       </div>
-
-      <div className="mb-4">
-        <label htmlFor="username" className="block text-black font-bold mb-2">
-          Username
-        </label>
+      <div>
+        <label htmlFor="username">Username</label>
         <input
           id="username"
           type="text"
           value={username || ""}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full bg-white text-black border border-black py-2 px-4 rounded focus:outline-none focus:bg-white"
         />
       </div>
-
-      <div className="mb-4">
-        <label htmlFor="website" className="block text-black font-bold mb-2">
-          Website
-        </label>
+      <div>
+        <label htmlFor="website">Website</label>
         <input
           id="website"
           type="url"
           value={website || ""}
           onChange={(e) => setWebsite(e.target.value)}
-          className="w-full bg-white text-black border border-black py-2 px-4 rounded focus:outline-none focus:bg-white"
         />
       </div>
 
-      <div className="mt-4 w-full">
+      <div>
         <button
-          className="button primary block w-full px-4 py-2 bg-main text-white rounded hover:bg-blue-dark focus:outline-none"
+          className="button primary block"
           onClick={() =>
             updateProfile({ fullname, username, website, avatar_url })
           }
@@ -135,12 +109,9 @@ export default function AccountForm({ session }) {
         </button>
       </div>
 
-      <div className="mt-4 w-full">
+      <div>
         <form action="/auth/signout" method="post">
-          <button
-            className="button block w-full px-4 py-2 bg-gray text-black rounded hover:bg-gray-dark focus:outline-none"
-            type="submit"
-          >
+          <button className="button block" type="submit">
             Sign out
           </button>
         </form>

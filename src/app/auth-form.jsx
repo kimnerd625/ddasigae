@@ -1,11 +1,10 @@
 "use client";
-
 import { Auth } from "@supabase/auth-ui-react";
-import { supabase } from "@/app/constants/supabase";
-
-import { getCallbackURL } from "@/app/utils/getUrl";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function AuthForm() {
+  const supabase = createClientComponentClient();
+
   const customTheme = {
     default: {
       colors: {
@@ -40,9 +39,6 @@ export default function AuthForm() {
     },
   };
 
-  const URL = getCallbackURL();
-  console.log(URL);
-
   return (
     <div className="w-full px-4">
       <Auth
@@ -64,7 +60,7 @@ export default function AuthForm() {
         theme="default"
         showLinks={false}
         providers={[]}
-        redirectTo={URL}
+        redirectTo="http://localhost:3000/auth/callback"
       />
     </div>
   );
