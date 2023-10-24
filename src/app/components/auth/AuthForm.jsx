@@ -2,11 +2,9 @@
 
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { supabase } from "@/app/constants/supabase";
 
 export default function AuthForm() {
-  const supabase = createClientComponentClient();
-
   const customTheme = {
     default: {
       colors: {
