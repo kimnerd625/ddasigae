@@ -64,7 +64,7 @@ export default function WeatherCard({ time, data }) {
   const formattedTime = `${parseInt(time.slice(0, 2), 10)}시`;
 
   return (
-    <div className="flex flex-col justify-start items-center overflow-hidden rounded-2xl drop-shadow-md mb-1">
+    <div className="flex flex-col justify-start items-center overflow-hidden ">
       <h4 className="text-black font-medium">{formattedTime}</h4>
       <Image src={weatherImage} width={80} alt="날씨 이미지" />
       <h4 className="text-black font-medium">{TMP}°C</h4>
