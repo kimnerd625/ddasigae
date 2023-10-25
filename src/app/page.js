@@ -1,16 +1,11 @@
-import Image from "next/image";
-
-import logoImage from "/public/images/logoImage.jpg";
-
-import AuthForm from "./auth-form";
+import Header from "@/components/header/Header";
+import WeatherCarousel from "@/components/weather/WeatherCarousel";
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center gap-4">
-      <Image src={logoImage} width={300} alt="로고 이미지" />
-      <div className="w-full">
-        <AuthForm />
-      </div>
+    <div className="w-full min-h-screen flex flex-col justify-start items-center gap-6">
+      <Header />
+      <WeatherCarousel />
     </div>
   );
 }

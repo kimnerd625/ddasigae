@@ -1,6 +1,8 @@
 import "./globals.css";
 import localFont from "next/font/local";
 
+import SplashWrapper from "@/components/splash/SplashWrapper";
+
 const Pretendard = localFont({
   src: "../../public/fonts/PretendardVariable.woff2",
   display: "swap",
@@ -16,7 +18,9 @@ export default function RootLayout({ children }) {
     <html lang="kr">
       <head></head>
       <body className={Pretendard.className}>
-        <div className="select-none">{children}</div>
+        <div className="select-none">
+          <SplashWrapper>{children}</SplashWrapper>
+        </div>
       </body>
     </html>
   );
