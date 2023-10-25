@@ -14,7 +14,7 @@ export default function SplashScreen({ finishLoading }) {
   }, [finishLoading]);
 
   return (
-    <div className="w-full min-h-screen items-center justify-center flex flex-col bg-white">
+    <div className="w-full min-h-screen items-center justify-center flex flex-col">
       <Image src={splashImage} width={300} alt="로고 이미지" id="logo" />
     </div>
   );
