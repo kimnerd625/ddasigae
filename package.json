@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/supabase-adapter": "^0.1.6",
     "@supabase/auth-helpers-nextjs": "^0.8.1",
     "@supabase/auth-ui-react": "^0.4.6",
-    "@supabase/supabase-js": "^2.38.2",
+    "@supabase/supabase-js": "^2.38.3",
     "axios": "^1.5.1",
     "next": "13.5.6",
+    "next-auth": "^4.24.3",
     "react": "^18",
     "react-dom": "^18",
     "swiper": "^10.3.1",

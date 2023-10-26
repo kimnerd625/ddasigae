@@ -21,6 +21,7 @@ export const groupDataWithTwoHours = (data) => {
   const groupedData = {};
 
   const todayDate = getTodayDate();
+  console.log("오늘 날짜: ", todayDate);
 
   data.forEach((item) => {
     const { fcstTime, fcstDate, category, fcstValue } = item;
