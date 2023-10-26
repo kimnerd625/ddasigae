@@ -9,7 +9,7 @@ export const fetchDailyWeatherData = async (
   const url = `https://vryxooqjvagumaurqvpc.supabase.co/functions/v1/getWeather?locationX=${locationX}&locationY=${locationY}&date=${date}&time=${time}`;
 
   try {
-    const res = await axios.get(proxyUrl + url, proxyHeader);
+    const res = await axios.get(url);
     console.log("결과값: ", res);
     const items = res?.data?.response?.body?.items?.item;
     console.log("아이템: ", items);
