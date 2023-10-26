@@ -8,7 +8,7 @@ export default function SigninButton() {
   if (session && session.user) {
     return (
       <div>
-        <p>{session.user.name}님🐶</p>
+        <p className="text-main">{session.user.name}님🐶</p>
         {/* <button onClick={() => signOut()}>로그아웃</button> */}
       </div>
     );
