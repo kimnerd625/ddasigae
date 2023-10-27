@@ -1,8 +1,11 @@
 "use client";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
-import { useEffect, useState } from "react";
 import { getTodayDate } from "@/utils/getDate";
 import { fetchUltravioletRayData } from "@/constants/weatherAPI";
+
+import sunblockImage from "/public/images/illusts/sunblock.png";
 
 export default function HomeCard() {
   const [avgUltraViolet, setAvgUltraViolet] = useState(); // 평균 자외선 지수
@@ -33,15 +36,53 @@ export default function HomeCard() {
   let ultraContents;
   switch (true) {
     case avgUltraViolet > 5:
-      ultraContents = "오늘 자외선 지수가 높네요! 자외선 차단제를 권장해요~ :)";
+      ultraContents = (
+        <>
+          <h4 className="font-light text-xs">
+            자외선 지수:{" "}
+            <span className="text-blue font-light text-xs">높음</span>
+          </h4>
+          <h4 className="text-black font-medium text-lg tracking-tight">
+            자외선 차단제 꼭 챙겨요~!
+          </h4>
+        </>
+      );
+      break;
+    case avgUltraViolet > 2:
+      ultraContents = (
+        <>
+          <h4 className="font-light text-xs">
+            자외선 지수:{" "}
+            <span className="text-gray font-light text-xs">보통</span>
+          </h4>
+          <h4 className="text-black font-medium text-lg tracking-tight">
+            자외선 차단제 잘 챙겨요~!
+          </h4>
+        </>
+      );
       break;
     default:
-      ultraContents = "오늘 자외선 지수가 좋네요~!";
+      ultraContents = (
+        <>
+          <h4 className="font-light text-xs">
+            자외선 지수:{" "}
+            <span className="text-blue font-light text-xs">낮음</span>
+          </h4>
+          <h4 className="text-black font-medium text-lg tracking-tight">
+            일광욕하기 정말 좋은 날씨!
+          </h4>
+        </>
+      );
   }
 
   return (
-    <div className="border-1 border-gray rounded-2xl drop-shadow-md mb-1 overflow-hidden flex flex-col justify-center items-center w-full px-2 py-2 bg-[#f7f7f7]">
-      {avgUltraViolet ? <h4>{ultraContents}</h4> : <h4>로딩중...</h4>}
+    <div className="border border-gray rounded-2xl mb-1 overflow-hidden flex flex-row justify-start items-center w-full px-4 py-2 bg-[#fefefe] gap-4">
+      <div className="rounded-[50%] bg-main p-1">
+        <Image src={sunblockImage} alt="자외선 일러스트" width={40} />
+      </div>
+      <div className="w-full flex flex-col justify-center items-start">
+        {avgUltraViolet ? <h4>{ultraContents}</h4> : <h4>로딩중...</h4>}
+      </div>
     </div>
   );
 }
