@@ -43,7 +43,7 @@ export default function HomeCard() {
             <span className="text-blue font-light text-xs">높음</span>
           </h4>
           <h4 className="text-black font-medium text-lg tracking-tight">
-            자외선 차단제 꼭 챙겨요~!
+            햇빛이 뜨거워요! 양산, 선글라스, 모자 최대한 챙겨요!
           </h4>
         </>
       );
@@ -56,7 +56,7 @@ export default function HomeCard() {
             <span className="text-gray font-light text-xs">보통</span>
           </h4>
           <h4 className="text-black font-medium text-lg tracking-tight">
-            자외선 차단제 잘 챙겨요~!
+            자외선 차단제를 발라주세요!
           </h4>
         </>
       );
@@ -69,7 +69,7 @@ export default function HomeCard() {
             <span className="text-blue font-light text-xs">낮음</span>
           </h4>
           <h4 className="text-black font-medium text-lg tracking-tight">
-            일광욕하기 정말 좋은 날씨!
+            자외선 지수가 낮아요
           </h4>
         </>
       );
