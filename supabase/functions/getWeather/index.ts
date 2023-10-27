@@ -1,3 +1,5 @@
+import { corsHeaders } from "../../../_shared/cors.ts";
+
 Deno.serve(async (req) => {
   const url = new URL(req.url);
   const locationX = url.searchParams.get("locationX");
@@ -11,6 +13,6 @@ Deno.serve(async (req) => {
   const weatherData = await weatherResponse.json();
 
   return new Response(JSON.stringify(weatherData), {
-    headers: { "Content-Type": "application/json" },
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
   });
 });

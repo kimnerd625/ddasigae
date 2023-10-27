@@ -5,8 +5,6 @@ import Header from "@/components/header/Header";
 import WeatherCarousel from "@/components/weather/WeatherCarousel";
 import HomeCard from "@/components/card/HomeCard";
 
-import clothesImage from "/public/images/logoImage.jpg";
-
 export default function Home() {
   return (
     <div className="w-full min-h-screen flex flex-col justify-start items-center gap-6">

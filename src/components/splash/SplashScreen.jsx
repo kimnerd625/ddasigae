@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 
-import splashImage from "/public/images/logoImage.jpg";
+import splashImage from "/public/images/pupImage.png";
 
 export default function SplashScreen({ finishLoading }) {
   useEffect(() => {
@@ -14,8 +14,8 @@ export default function SplashScreen({ finishLoading }) {
   }, [finishLoading]);
 
   return (
-    <div className="w-full min-h-screen items-center justify-center flex flex-col">
-      <Image src={splashImage} width={300} alt="로고 이미지" id="logo" />
+    <div className="bg-main w-full min-h-screen items-center justify-center flex flex-col">
+      <Image src={splashImage} width={240} alt="로고 이미지" id="logo" />
     </div>
   );
 }

@@ -8,14 +8,14 @@ export default function SigninButton() {
   if (session && session.user) {
     return (
       <div>
-        <p className="text-main">{session.user.name}님🐶</p>
+        <p className="text-green">{session.user.name}님🐶</p>
         {/* <button onClick={() => signOut()}>로그아웃</button> */}
       </div>
     );
   }
 
   return (
-    <button onClick={() => signIn()} className="text-blue underline">
+    <button onClick={() => signIn()} className="text-blue">
       따시개에 로그인하기🐾
     </button>
   );

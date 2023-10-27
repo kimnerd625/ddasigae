@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
@@ -69,6 +70,8 @@ export default function WeatherCarousel() {
           slidesPerView={4}
           mousewheel={true}
           className="w-full"
+          autoplay={{ delay: 1500, disableOnInteraction: false }}
+          modules={[Autoplay]}
         >
           {generateSwiperSlides()}
         </Swiper>
