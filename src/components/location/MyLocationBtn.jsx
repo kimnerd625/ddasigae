@@ -74,7 +74,14 @@ export default function MyLocationBtn() {
           </span>
         </div>
       ) : (
-        <h2>위치 추적 중..</h2>
+        <div className="flex flex-row justify-center items-center gap-1">
+          <span className="text-black font-normal text-2xl tracking-tight">
+            서대문구
+          </span>
+          <span className="text-black font-semibold text-2xl tracking-tight">
+            대현동
+          </span>
+        </div>
       )}
     </>
   );
