@@ -7,7 +7,7 @@ import { fetchUltravioletRayData } from "@/constants/weatherAPI";
 
 import sunblockImage from "/public/images/illusts/sunblock.png";
 
-export default function HomeCard() {
+export default function UltravioletCard() {
   const [avgUltraViolet, setAvgUltraViolet] = useState(); // 평균 자외선 지수
 
   // 자외선 지수 확인을 위한 날짜 및 시간 설정: 금일 오전 6시 보도로 설정
@@ -69,7 +69,7 @@ export default function HomeCard() {
             <span className="text-blue font-light text-xs">낮음</span>
           </h4>
           <h4 className="text-black font-medium text-lg tracking-tight">
-            자외선 지수가 낮아요
+            자외선으로부터 안전해요~
           </h4>
         </>
       );

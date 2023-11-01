@@ -7,7 +7,7 @@ export default function SigninButton() {
 
   if (session && session.user) {
     return (
-      <div className="flex flex-row justify-start items-center gap-1">
+      <div className="flex flex-row justify-start items-center gap-2">
         <img
           src={session.user.image}
           alt="프로필 이미지"

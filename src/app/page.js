@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Header from "@/components/header/Header";
 import WeatherTab from "@/components/weather/WeatherTab";
 import ClothesList from "@/components/clothesList/ClothesList";
-import HomeCard from "@/components/card/HomeCard";
+import UltravioletCard from "@/components/card/UltravioletCard";
 
 export default function Home() {
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Home() {
         <ClothesList />
       </div>
       <div className="w-full px-4">
-        <HomeCard />
+        <UltravioletCard />
       </div>
     </div>
   );
