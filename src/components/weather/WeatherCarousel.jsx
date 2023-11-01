@@ -76,7 +76,7 @@ export default function WeatherCarousel() {
           {generateSwiperSlides()}
         </Swiper>
       ) : (
-        <div className="h-[130px] flex flex-col justify-center items-center">
+        <div className="h-[100px] flex flex-col justify-center items-center">
           <h2>데이터 로딩 중입니다...</h2>
         </div>
       )}

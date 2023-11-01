@@ -8,6 +8,8 @@ import addressData from "/public/address.json";
 export default function MyLocationBtn() {
   const [myCurrentLocation, setMyCurrentLocation] = useState();
   const [myCurrentLocationAddress, setMyCurrentLocationAddress] = useState();
+  const [myTown, setMyTown] = useState();
+  const [myVillage, setMyVillage] = useState();
   const seoulData = addressData["서울특별시"];
 
   useEffect(() => {
@@ -52,6 +54,8 @@ export default function MyLocationBtn() {
         setMyCurrentLocationAddress(
           `${closestPlace["시군구"]} ${closestPlace["읍면동/구"]}`
         );
+        setMyTown(closestPlace["시군구"]);
+        setMyVillage(closestPlace["읍면동/구"]);
       } else {
         console.log("가장 가까운 곳을 찾을 수 없습니다.");
       }
@@ -61,11 +65,16 @@ export default function MyLocationBtn() {
   return (
     <>
       {myCurrentLocationAddress ? (
-        <div className="flex flex-row justify-center items-center w-full gap-2">
-          <h2>{myCurrentLocationAddress}</h2>
+        <div className="flex flex-row justify-center items-center gap-1">
+          <span className="text-black font-normal text-2xl tracking-tight">
+            {myTown}
+          </span>
+          <span className="text-black font-semibold text-2xl tracking-tight">
+            {myVillage}
+          </span>
         </div>
       ) : (
-        <h2>내 위치를 구할 수 없습니다.</h2>
+        <h2>위치 추적 중..</h2>
       )}
     </>
   );
