@@ -23,7 +23,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <div className="w-full min-h-screen flex flex-col justify-start items-center gap-4 relative">
+    <div className="w-full min-h-screen flex flex-col justify-start items-center gap-3 relative">
       <Header />
       <WeatherTab />
       <div className="w-full px-4">

@@ -28,14 +28,19 @@ export default function TemperatureContainer() {
 
   return (
     <div className="flex-1 flex flex-col justify-start items-start">
-      <h5 className="text-black font-light text-lg tracking-tight">
-        <span className="text-black font-semibold">오늘</span> {todayMonth}월{" "}
-        {todayDay}일
-      </h5>
+      <div className="flex flex-row justify-start items-center gap-1 px-1">
+        <span className="text-black font-semibold text-base">오늘</span>
+        <h5 className="text-black font-light text-base tracking-tight">
+          {todayMonth}월
+        </h5>
+        <h5 className="text-black font-light text-base tracking-tight">
+          {todayDay}일
+        </h5>
+      </div>
       <div className="flex flex-row justify-start items-center gap-3">
-        <h3 className="font-thin text-7xl tracking-tight">
+        <h5 className="font-thin text-7xl tracking-tight">
           {temp ? temp : 20}
-        </h3>
+        </h5>
         <div className="flex flex-col justify-between items-center gap-6">
           <span className="text-red font-medium tracking-tight text-lg align-top leading-3">
             {maxTemp ? maxTemp : 20}

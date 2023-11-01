@@ -76,7 +76,7 @@ export default function HomeCard() {
   }
 
   return (
-    <div className="border border-gray rounded-2xl mb-1 overflow-hidden flex flex-row justify-start items-center w-full px-4 py-2 bg-[#fefefe] gap-4">
+    <div className="rounded-2xl mb-1 overflow-hidden flex flex-row justify-start items-center w-full px-4 py-2 bg-[#FFFBEE] gap-4 drop-shadow-md">
       <div className="rounded-[50%] bg-main p-1">
         <Image src={sunblockImage} alt="자외선 일러스트" width={40} />
       </div>

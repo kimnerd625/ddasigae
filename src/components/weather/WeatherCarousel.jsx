@@ -69,7 +69,7 @@ export default function WeatherCarousel() {
           slidesPerView={3}
           mousewheel={true}
           className="w-full"
-          autoplay={{ delay: 1000, disableOnInteraction: false }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
           modules={[Autoplay]}
         >
           {generateSwiperSlides()}
