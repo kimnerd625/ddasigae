@@ -63,14 +63,13 @@ export default function WeatherCarousel() {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center px-4 py-2">
+    <div className="w-[66%] flex flex-col justify-center items-center pl-4 py-2">
       {weatherList ? (
         <Swiper
-          spaceBetween={10}
-          slidesPerView={4}
+          slidesPerView={3}
           mousewheel={true}
           className="w-full"
-          autoplay={{ delay: 1500, disableOnInteraction: false }}
+          autoplay={{ delay: 1000, disableOnInteraction: false }}
           modules={[Autoplay]}
         >
           {generateSwiperSlides()}

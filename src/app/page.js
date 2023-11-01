@@ -2,9 +2,9 @@
 import { useEffect } from "react";
 
 import Header from "@/components/header/Header";
-import WeatherCarousel from "@/components/weather/WeatherCarousel";
-import HomeCard from "@/components/card/HomeCard";
+import WeatherTab from "@/components/weather/WeatherTab";
 import ClothesList from "@/components/clothesList/ClothesList";
+import HomeCard from "@/components/card/HomeCard";
 
 export default function Home() {
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="w-full min-h-screen flex flex-col justify-start items-center gap-4 relative">
       <Header />
-      <WeatherCarousel />
+      <WeatherTab />
       <div className="w-full px-4">
         <ClothesList />
       </div>
