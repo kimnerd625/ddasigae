@@ -63,7 +63,7 @@ export default function WeatherCarousel() {
   };
 
   return (
-    <div className="w-[66%] flex flex-col justify-center items-end pl-4 py-2 translate-x-3">
+    <div className="w-[66%] flex flex-col justify-center items-end pl-4 py-2 translate-x-2">
       {weatherList ? (
         <Swiper
           slidesPerView={3}
