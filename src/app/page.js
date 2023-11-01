@@ -5,7 +5,7 @@ import ClothesList from "@/components/clothesList/ClothesList";
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen flex flex-col justify-start items-center gap-6 relative">
+    <div className="w-full min-h-screen flex flex-col justify-start items-center gap-4 relative">
       <Header />
       <WeatherCarousel />
       <div className="w-full px-4">
