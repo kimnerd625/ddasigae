@@ -1,5 +1,6 @@
 import "./globals.css";
 import localFont from "next/font/local";
+import Script from "next/script";
 
 import SplashWrapper from "@/components/splash/SplashWrapper";
 import Providers from "@/components/userAuth/Providers";
@@ -17,7 +18,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="kr">
-      <head></head>
+      <head>
+        <Script
+          strategy="beforeInteractive"
+          src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID}`}
+        />
+      </head>
       <body className={Pretendard.className}>
         <div className="select-none">
           <Providers>

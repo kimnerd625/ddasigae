@@ -63,7 +63,7 @@ export default function WeatherCarousel() {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center px-4">
+    <div className="w-full flex flex-col justify-center items-center px-4 py-2">
       {weatherList ? (
         <Swiper
           spaceBetween={10}
@@ -76,7 +76,9 @@ export default function WeatherCarousel() {
           {generateSwiperSlides()}
         </Swiper>
       ) : (
-        <h2>데이터 로딩 중입니다...</h2>
+        <div className="h-[130px] flex flex-col justify-center items-center">
+          <h2>데이터 로딩 중입니다...</h2>
+        </div>
       )}
     </div>
   );
