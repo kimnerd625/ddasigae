@@ -7,6 +7,7 @@ import "swiper/css";
 
 import UltravioletCard from "./UltravioletCard";
 import DustCard from "./DustCard";
+import FlowerCard from "./FlowerCard";
 
 export default function ClimateCardCarousel() {
   return (
@@ -17,6 +18,9 @@ export default function ClimateCardCarousel() {
         </SwiperSlide>
         <SwiperSlide>
           <DustCard />
+        </SwiperSlide>
+        <SwiperSlide>
+          <FlowerCard />
         </SwiperSlide>
       </Swiper>
     </>
