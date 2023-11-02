@@ -11,7 +11,7 @@ import DustCard from "./DustCard";
 export default function ClimateCardCarousel() {
   return (
     <>
-      <Swiper slidesPerView={1} mousewheel={true} className="w-full">
+      <Swiper slidesPerView={1} spaceBetween={10} mousewheel={true}>
         <SwiperSlide>
           <UltravioletCard />
         </SwiperSlide>
