@@ -42,7 +42,7 @@ export default function UltravioletCard() {
             자외선 지수:{" "}
             <span className="text-blue font-light text-xs">높음</span>
           </h4>
-          <h4 className="text-black font-medium text-lg tracking-tight">
+          <h4 className="text-black font-medium text-xl tracking-tight">
             햇빛이 뜨거워요! 양산, 선글라스, 모자 최대한 챙겨요!
           </h4>
         </>
@@ -55,7 +55,7 @@ export default function UltravioletCard() {
             자외선 지수:{" "}
             <span className="text-gray font-light text-xs">보통</span>
           </h4>
-          <h4 className="text-black font-medium text-lg tracking-tight">
+          <h4 className="text-black font-medium text-xl tracking-tight">
             자외선 차단제를 발라주세요!
           </h4>
         </>
@@ -68,7 +68,7 @@ export default function UltravioletCard() {
             자외선 지수:{" "}
             <span className="text-blue font-light text-xs">낮음</span>
           </h4>
-          <h4 className="text-black font-medium text-lg tracking-tight">
+          <h4 className="text-black font-medium text-xl tracking-tight">
             자외선으로부터 안전해요~
           </h4>
         </>
