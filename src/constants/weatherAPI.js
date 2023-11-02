@@ -34,3 +34,18 @@ export const fetchUltravioletRayData = async (time) => {
     console.log(error);
   }
 };
+
+export const fetchDustData = async (date) => {
+  const url = `https://vryxooqjvagumaurqvpc.supabase.co/functions/v1/getDust?date=${date}`;
+
+  try {
+    const res = await axios.get(url);
+    console.log("미세먼지 결과값: ", res);
+    const items = res?.data?.response?.body?.items?.item;
+    console.log("미세먼지 아이템: ", items);
+    return items;
+  } catch (error) {
+    console.log("미세먼지 에러 발생");
+    console.log(error);
+  }
+};

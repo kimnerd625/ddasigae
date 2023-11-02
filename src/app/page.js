@@ -5,6 +5,7 @@ import Header from "@/components/header/Header";
 import WeatherTab from "@/components/weather/WeatherTab";
 import ClothesList from "@/components/clothesList/ClothesList";
 import UltravioletCard from "@/components/card/UltravioletCard";
+import DustCard from "@/components/card/DustCard";
 
 export default function Home() {
   // useEffect(() => {
@@ -31,6 +32,7 @@ export default function Home() {
       </div>
       <div className="w-full px-4">
         <UltravioletCard />
+        <DustCard />
       </div>
     </div>
   );
