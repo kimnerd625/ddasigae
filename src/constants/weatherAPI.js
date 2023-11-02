@@ -41,7 +41,7 @@ export const fetchDustData = async (date) => {
   try {
     const res = await axios.get(url);
     console.log("미세먼지 결과값: ", res);
-    const items = res?.data?.response?.body?.items?.item;
+    const items = res?.data?.response?.body?.items[0];
     console.log("미세먼지 아이템: ", items);
     return items;
   } catch (error) {

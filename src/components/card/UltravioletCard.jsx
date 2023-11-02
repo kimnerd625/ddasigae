@@ -40,10 +40,10 @@ export default function UltravioletCard() {
         <>
           <h4 className="font-light text-xs">
             자외선 지수:{" "}
-            <span className="text-blue font-light text-xs">높음</span>
+            <span className="text-red font-light text-xs">높음</span>
           </h4>
           <h4 className="text-black font-medium text-xl tracking-tight">
-            햇빛이 뜨거워요! 양산, 선글라스, 모자 최대한 챙겨요!
+            양산, 선글라스, 모자 최대한 챙겨요!
           </h4>
         </>
       );
